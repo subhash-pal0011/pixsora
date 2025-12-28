@@ -17,20 +17,42 @@ const ViewStory = () => {
        const { userData } = useSelector((state) => state.user);
        const [currentIndex, setCurrentIndex] = useState(0);
 
+       // useEffect(() => {
+       //        const getUserStory = async () => {
+       //               try {
+       //                      const res = await axios.get(`https://pixsora-backend-85ol.onrender.com/api/getUserStory/${userName}`, {}, { withCredentials: true });
+       //                      if (res.data.success) {
+       //                             setStory(res.data.data);
+       //                             setCurrentIndex(0);
+       //                      }
+       //               } catch (error) {
+       //                      toast.error(error.response?.data?.message);
+       //               }
+       //        };
+       //        getUserStory();
+       // }, [userName]);
+
+
        useEffect(() => {
               const getUserStory = async () => {
                      try {
-                            const res = await axios.get(`https://pixsora-backend-85ol.onrender.com/api/getUserStory/${userName}`, {}, { withCredentials: true });
+                            const res = await axios.get(
+                                   `https://pixsora-backend-85ol.onrender.com/api/getUserStory/${userName}`,
+                                   { withCredentials: true }
+                            );
+
                             if (res.data.success) {
                                    setStory(res.data.data);
                                    setCurrentIndex(0);
                             }
                      } catch (error) {
-                            toast.error(error.response?.data?.message);
+                            toast.error(error.response?.data?.message || "Unauthorized");
                      }
               };
+
               getUserStory();
        }, [userName]);
+
 
        useEffect(() => {
               if (story.length === 0) return;
