@@ -29,7 +29,7 @@ export function ReelsCommentDailog({ reelsId, initialComments  }) {
 
        const comment = async (data) => {
               try {
-                     const res = await axios.post(`/api/comment/${reelsId}`,data,{ withCredentials: true });
+                     const res = await axios.post(`https://pixsora-backend-85ol.onrender.com/api/comment/${reelsId}`,data,{ withCredentials: true });
 
                      if (res.data.success) {
                             toast.success(res.data.message);

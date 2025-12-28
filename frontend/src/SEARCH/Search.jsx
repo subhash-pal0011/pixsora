@@ -28,7 +28,7 @@ const Search = () => {
 
   const search = async (query) => {
     try {
-      const res = await axios.get(`/api/search?search=${query}`,{ withCredentials:true});
+      const res = await axios.get(`https://pixsora-backend-85ol.onrender.com/api/search?search=${query}`,{ withCredentials:true});
       if (res.data.success) {
         dispatch(setSearch(res.data.data));
       }
@@ -122,7 +122,6 @@ const Search = () => {
           </div>
         ) : (
           <p className="text-center text-gray-500 mt-10">
-            {/* No users found */}
           </p>
         )}
       </div>

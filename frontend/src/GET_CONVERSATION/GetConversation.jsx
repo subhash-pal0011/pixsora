@@ -10,7 +10,7 @@ const GetConversation = () => {
        useEffect(() => {
               const getChatUser = async () => {
                      try {
-                            const res = await axios.get("/api/getconversation", {
+                            const res = await axios.get("https://pixsora-backend-85ol.onrender.com/api/getconversation", {
                                    withCredentials: true,
                             });
 

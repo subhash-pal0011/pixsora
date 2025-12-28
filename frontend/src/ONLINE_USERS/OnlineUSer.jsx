@@ -19,7 +19,6 @@ const OnlineUser = ({ user }) => {
     <div className="w-[70px] flex flex-col items-center">
       <div className="relative cursor-pointer" onClick={handelClik}>
         <Avatar src={user?.profilePic || "/empty-img.jpg"} round size="50" />
-
         <span className="absolute bottom-0 right-0 w-3 h-3 bg-green-500 border-2 border-black rounded-full"></span>
       </div>
       <p className="text-[12px] text-center truncate w-full">{user?.userName}</p>

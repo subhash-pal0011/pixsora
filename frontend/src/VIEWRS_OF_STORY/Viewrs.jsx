@@ -22,7 +22,7 @@ export function Viewrs({ storyId }) {
 
               const fetchViewrs = async () => {
                      try {
-                            const res = await axios.get(`/api/story/viewers/${storyId}`,{}, {
+                            const res = await axios.get(`https://pixsora-backend-85ol.onrender.com/api/story/viewers/${storyId}`,{}, {
                                    withCredentials: true,
                             });
 

@@ -28,7 +28,7 @@ const Signup = () => {
 
        const onSubmit = async (data) => {
               try {
-                     const res = await axios.post("/api/signup", data, {
+                     const res = await axios.post("https://pixsora-backend-85ol.onrender.com/api/signup", data, {
                             headers: {
                                    "Content-Type": "application/json"
                             },

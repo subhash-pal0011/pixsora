@@ -52,7 +52,7 @@ const EditProfile = () => {
                      if (data.profilepic) {
                             formData.append("profilepic", data.profilepic[0]);
                      }
-                     const res = await axios.post("http://localhost:8000/api/editProfile", formData, {
+                     const res = await axios.post("https://pixsora-backend-85ol.onrender.com/api/editProfile", formData, {
                             headers: { "Content-Type": "multipart/form-data" },
                             withCredentials: true
                      });

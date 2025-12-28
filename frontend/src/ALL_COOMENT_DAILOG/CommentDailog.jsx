@@ -46,7 +46,7 @@ export function CommentDailog({ postId, comments }) {
 
        const comment = async (data) => {
               try {
-                     const res = await axios.post(`/api/commentPost/${postId}`,data,
+                     const res = await axios.post(`https://pixsora-backend-85ol.onrender.com/api/commentPost/${postId}`,data,
                             { withCredentials: true }
                      );
 
@@ -72,7 +72,7 @@ export function CommentDailog({ postId, comments }) {
 
        const deleteComment = async (commentId) => {
               try {
-                     const res = await axios.delete(`/api/deleteComment/${postId}/${commentId}`, { withCredentials: true });
+                     const res = await axios.delete(`https://pixsora-backend-85ol.onrender.com/api/deleteComment/${postId}/${commentId}`, { withCredentials: true });
                      if (res.data.success) {
                             toast.success(res.data.message);
                             setCommentList(prev => prev.filter(cmt => cmt._id !== commentId));  //HUM FILTER KR DENGE TBHI HUME UI SE DELETE KRTE DIKHEGA NHITO PAGE KO RELOD KRNA PADEGA.

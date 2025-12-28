@@ -13,8 +13,8 @@ export default defineConfig(() => ({
   server: {
     proxy: {
       "/api": {
-        target: "http://localhost:8000",
-        secure: false
+        target: "https://pixsora-backend-85ol.onrender.com",
+        secure: true
       },
     },
   },

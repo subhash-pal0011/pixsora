@@ -20,7 +20,7 @@ const ViewStory = () => {
        useEffect(() => {
               const getUserStory = async () => {
                      try {
-                            const res = await axios.get(`/api/getUserStory/${userName}`, {}, { withCredentials: true });
+                            const res = await axios.get(`https://pixsora-backend-85ol.onrender.com/api/getUserStory/${userName}`, {}, { withCredentials: true });
                             if (res.data.success) {
                                    setStory(res.data.data);
                                    setCurrentIndex(0);
@@ -47,10 +47,9 @@ const ViewStory = () => {
 
        const currentStory = story[currentIndex];
 
-
        const deleteStory = async () => {
               try {
-                     const res = await axios.delete(`/api/deleteStory/${currentStory._id}`, { withCredentials: true });
+                     const res = await axios.delete(`https://pixsora-backend-85ol.onrender.com/api/deleteStory/${currentStory._id}`, { withCredentials: true });
 
                      if (res.data.success) {
                             toast.success(res.data.message);
@@ -68,7 +67,6 @@ const ViewStory = () => {
                      toast.error(error.response?.data?.message);
               }
        };
-
 
        return (
               <div className="h-screen w-full  flex flex-col">

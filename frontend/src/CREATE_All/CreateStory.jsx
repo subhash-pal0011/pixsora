@@ -51,7 +51,7 @@ export function CreateStory() {
               formData.append("mediaType", fileType);
 
               try {
-                     const res = await axios.post("/api/storyUplod",formData,{ withCredentials: true });
+                     const res = await axios.post("https://pixsora-backend-85ol.onrender.com/api/storyUplod",formData,{ withCredentials: true });
 
                      if (res.data.success) {
                             toast.success(res.data.message);

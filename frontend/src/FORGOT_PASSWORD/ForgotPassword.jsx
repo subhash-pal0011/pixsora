@@ -32,7 +32,7 @@ const ForgotPassword = () => {
 
        const handleEmailSubmit = async (data) => {
               try {
-                     const res = await axios.post("/api/forgot/sendotp", data, { withCredentials: true });
+                     const res = await axios.post("https://pixsora-backend-85ol.onrender.com/api/forgot/sendotp", data, { withCredentials: true });
                      if (res.data.success) {
                             toast.success(res.data.message);
                             setUser({ email: data.email });
@@ -46,7 +46,7 @@ const ForgotPassword = () => {
 
        const handleOtpSubmit = async (data) => {
               try {
-                     const res = await axios.post("/api/forgotPass/verify", {
+                     const res = await axios.post("https://pixsora-backend-85ol.onrender.com/api/forgotPass/verify", {
                             email: user.email,
                             otp: data.otp
                      }, { withCredentials: true });
@@ -63,7 +63,7 @@ const ForgotPassword = () => {
 
        const handlePasswordSubmit = async (data) => {
               try {
-                     const res = await axios.post("/api/forgotpassword", {
+                     const res = await axios.post("https://pixsora-backend-85ol.onrender.com/api/forgotpassword", {
                             email: user.email,
                             password: data.password,
                             confirmPassword: data.confirmPassword

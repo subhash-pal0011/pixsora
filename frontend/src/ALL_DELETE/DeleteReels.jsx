@@ -17,7 +17,7 @@ export function DeleteReels({ reelsId, setReels }) {  // ⬅ props add data
        const deleteReel = async () => {
               try {
                      const res = await axios.delete(
-                            `/api/deleteReels/${reelsId}`,
+                            `https://pixsora-backend-85ol.onrender.com/api/deleteReels/${reelsId}`,
                             { withCredentials: true }
                      );
 

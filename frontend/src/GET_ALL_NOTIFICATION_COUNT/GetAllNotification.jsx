@@ -13,7 +13,7 @@ const GetAllNotiCount = () => {
        useEffect(() => {
               const getAllCount = async () => {
                      try {
-                            const res = await axios.get("/api/countNotification", {
+                            const res = await axios.get("https://pixsora-backend-85ol.onrender.com/api/countNotification", {
                                    withCredentials: true,
                             });
                             if (res.data.success) {

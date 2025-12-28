@@ -23,7 +23,7 @@ const FollowUnfollow = ({ targetUserId }) => {
        const handleFollow = async () => {
               try {
                      const res = await axios.post(
-                            `/api/follow/${targetUserId}`,
+                            `https://pixsora-backend-85ol.onrender.com/api/follow/${targetUserId}`,
                             {},
                             { withCredentials: true }
                      );

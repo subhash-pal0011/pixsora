@@ -20,6 +20,7 @@ const Login = () => {
   const { setUser } = useUser()
 
   const dispatch = useDispatch() // redux
+  
   const {
     register,
     handleSubmit,
@@ -29,11 +30,9 @@ const Login = () => {
 
   const onSubmit = async (data) => {
     try {
-      const res = await axios.post("/api/login", data, {
+      const res = await axios.post("https://pixsora-backend-85ol.onrender.com/api/login", data, {
         withCredentials: true
       })
-
-
       if (res.data.success) {
         toast.success(res.data.message);
         setUser({ email: data.email })

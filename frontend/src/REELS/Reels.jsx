@@ -20,7 +20,7 @@ const Reels = () => {
        useEffect(() => {
               const getAllReels = async () => {
                      try {
-                            const res = await axios.get("/api/getReels", { withCredentials: true });
+                            const res = await axios.get("https://pixsora-backend-85ol.onrender.com/api/getReels", { withCredentials: true });
 
                             if (res.data.success) {
                                    setReels(res.data.data);
@@ -35,7 +35,6 @@ const Reels = () => {
               getAllReels();
        }, []);
 
-
        const likeReels = async (reelsId) => {
               try {
                      setReels((prev) =>
@@ -49,7 +48,7 @@ const Reels = () => {
                             )
                      );
                      // backend me request
-                     const res = await axios.post(`/api/like/${reelsId}`, {}, { withCredentials: true });
+                     const res = await axios.post(`https://pixsora-backend-85ol.onrender.com/api/like/${reelsId}`, {}, { withCredentials: true });
                      if (!res.data.success) {
                             toast.error("Failed to like");
                      }
@@ -58,7 +57,6 @@ const Reels = () => {
                      toast.error(error.response?.data?.message);
               }
        };
-
 
        // 🔥 AUTO PLAY + AUTO PAUSE ON SCROLL
        useEffect(() => {

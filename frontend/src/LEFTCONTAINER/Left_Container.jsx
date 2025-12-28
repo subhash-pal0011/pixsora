@@ -26,7 +26,7 @@ const Left_Container = () => {
   useEffect(() => {
     const fetchSuggestedUsers = async () => {
       try {
-        const res = await axios.get("/api/suggestedUser", { withCredentials: true });
+        const res = await axios.get("https://pixsora-backend-85ol.onrender.com/api/suggestedUser", { withCredentials: true });
         if (res.data.success) {
           setSuggestedUsers(res.data.data);
         }
@@ -40,7 +40,7 @@ const Left_Container = () => {
 
   const logout = async () => {
     try {
-      const res = await axios.get("/api/logout", { withCredentials: true });
+      const res = await axios.get("https://pixsora-backend-85ol.onrender.com/api/logout", { withCredentials: true });
 
       if (res.data.success) {
         toast.success(res.data.message);

@@ -26,7 +26,7 @@ const GetProfile = () => {
               const fetchProfile = async () => {
                      try {
                             const res = await axios.get(
-                                   `/api/profile/${userName}`,
+                                   `https://pixsora-backend-85ol.onrender.com/api/profile/${userName}`,
                                    { withCredentials: true }
                             );
                             if (res.data.success) {
@@ -56,7 +56,7 @@ const GetProfile = () => {
 
        const deleteAccount = async () => {
               try {
-                     const res = await axios.delete("/api/deleteAccount", { withCredentials: true })
+                     const res = await axios.delete("https://pixsora-backend-85ol.onrender.com/api/deleteAccount", { withCredentials: true })
                      if (res.data.success) {
                             navigate("/login")
                             toast.success(res.data.message)

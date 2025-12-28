@@ -18,7 +18,7 @@ export function DeletePost({ postId, setPosts, authorId }) {   // ⬅ props add
        const navigate = useNavigate()
        const deletePost = async () => {
               try {
-                     const res = await axios.delete(`/api/deletePost/${postId}`, {
+                     const res = await axios.delete(`https://pixsora-backend-85ol.onrender.com/api/deletePost/${postId}`, {
                             withCredentials: true,
                      });
 

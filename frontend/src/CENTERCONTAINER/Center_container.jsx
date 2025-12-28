@@ -51,7 +51,7 @@ const Center_container = () => {
   useEffect(() => {
     const getAllPost = async () => {
       try {
-        const res = await axios.get("/api/getAllPost", { withCredentials: true });
+        const res = await axios.get("https://pixsora-backend-85ol.onrender.com/api/getAllPost", { withCredentials: true });
         if (res.data.success) {
           setUserPosts(res.data.data);
         }
@@ -106,7 +106,7 @@ const Center_container = () => {
 
   const likPost = async (postId) => {
     try {
-      const res = await axios.post(`/api/likePost/${postId}`, {}, { withCredentials: true });
+      const res = await axios.post(`https://pixsora-backend-85ol.onrender.com/api/likePost/${postId}`, {}, { withCredentials: true });
       if (res.data.success) {
         //🔥setUserPosts(res.data.data) //sidha nhi bhej skte kyuki hume liked dilkie ek sth hi emplement kiya hii  hume post ko map krke dekhna padega.
 
@@ -127,7 +127,7 @@ const Center_container = () => {
 
   const savedPost = async (postId) => {
     try {
-      const res = await axios.post(`/api/savedpost/${postId}`, {}, { withCredentials: true })
+      const res = await axios.post(`https://pixsora-backend-85ol.onrender.com/api/savedpost/${postId}`, {}, { withCredentials: true })
       if (res.data.success) {
         toast.success(res.data.message)
       }
@@ -148,7 +148,7 @@ const Center_container = () => {
   useEffect(() => {
     const getStory = async () => {
       try {
-        const res = await axios.get("/api/getAllStory", { withCredentials: true });
+        const res = await axios.get("https://pixsora-backend-85ol.onrender.com/api/getAllStory", { withCredentials: true });
         if (res?.data?.success) {
           setStory(res.data.data);
         }

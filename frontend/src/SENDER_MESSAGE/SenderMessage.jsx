@@ -52,7 +52,7 @@ const SenderMessage = ({ message, onEdit }) => {
 
        const deleteMsg = async () => {
               try {
-                     const res = await axios.delete(`/api/deletemsg/${message._id}`,{ withCredentials: true});
+                     const res = await axios.delete(`https://pixsora-backend-85ol.onrender.com/api/deletemsg/${message._id}`,{ withCredentials: true});
 
                      if (res.data.success) {
                             dispatch(setMessages(

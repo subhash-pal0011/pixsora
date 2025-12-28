@@ -1,7 +1,7 @@
 import { io } from "socket.io-client";
 
 // 🔌 socket connect.
-const socket = io("http://localhost:8000", {
+const socket = io("https://pixsora-backend-85ol.onrender.com", {
        withCredentials: true,
        autoConnect: false, // ❗ important hii ye likhna pdta hii
 });

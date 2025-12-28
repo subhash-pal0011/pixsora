@@ -29,14 +29,12 @@ const MessageArea = () => {
        const [editingMessage, setEditingMessage] = useState(null);
        const { onlineUsers } = useSelector((state) => state.message)
 
-
        const {
               register,
               handleSubmit,
               reset,
               formState: { isSubmitting, dirtyFields },
        } = useForm();
-
 
        // JB DILTE KR RHE HOO SENDER MESSAGE FILE MEA FILTER YHA BHGI KRNA PADEGA MSG KO REAL TIME.
        useEffect(() => {
@@ -54,7 +52,7 @@ const MessageArea = () => {
               if (!selectedUser?._id) return;
               const seenMsg = async () => {
                      try {
-                            const res = await axios.post(`/api/seenmsg/${selectedUser._id}`, {},
+                            const res = await axios.post(`https://pixsora-backend-85ol.onrender.com/api/seenmsg/${selectedUser._id}`, {},
                                    { withCredentials: true }
                             );
                             if (res.data.success) {
@@ -76,7 +74,7 @@ const MessageArea = () => {
                                    setLoadingUser(false);
                                    return;
                             }
-                            const res = await axios.get(`/api/profile/${userName}`, {
+                            const res = await axios.get(`https://pixsora-backend-85ol.onrender.com/api/profile/${userName}`, {
                                    withCredentials: true,
                             });
                             if (res.data.success) {
@@ -105,7 +103,7 @@ const MessageArea = () => {
               const getMessages = async () => {
                      try {
                             const res = await axios.get(
-                                   `/api/getmsg/${selectedUser._id}`,
+                                   `https://pixsora-backend-85ol.onrender.com/api/getmsg/${selectedUser._id}`,
                                    { withCredentials: true }
                             );
 
@@ -166,7 +164,7 @@ const MessageArea = () => {
               try {
                      // EDITED
                      if (editingMessage) {
-                            const res = await axios.post(`/api/editmsg/${editingMessage._id}`,
+                            const res = await axios.post(`https://pixsora-backend-85ol.onrender.com/api/editmsg/${editingMessage._id}`,
                                    { message: data.message }, { withCredentials: true }
                             );
 
@@ -199,7 +197,7 @@ const MessageArea = () => {
                             formData.append("mediaType", fileType);
                      }
                      const res = await axios.post(
-                            `/api/sendmsg/${selectedUser._id}`,
+                            `https://pixsora-backend-85ol.onrender.com/api/sendmsg/${selectedUser._id}`,
                             formData,
                             { withCredentials: true }
                      );
@@ -262,7 +260,7 @@ const MessageArea = () => {
 
        const clearChat = async () => {
               try {
-                     const res = await axios.delete(`/api/clearchat/${selectedUser?._id}`, {}, { withCredentials: true });
+                     const res = await axios.delete(`https://pixsora-backend-85ol.onrender.com/api/clearchat/${selectedUser?._id}`, {}, { withCredentials: true });
                      if (res.data.success) {
                             dispatch(setMessages([])); //ISSE HUM JO REDUX MEA MESSAGE STORE KIYE HII CLEAR KR RHE HII.
                             toast.success(res.data.message);

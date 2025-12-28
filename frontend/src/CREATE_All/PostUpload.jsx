@@ -59,7 +59,7 @@ export function PostUpload() {
 
               try {
                      const res = await axios.post(
-                            "/api/createPost",formData,
+                            "https://pixsora-backend-85ol.onrender.com/api/createPost",formData,
                             {
                                    headers: { "Content-Type": "multipart/form-data" },
                                    withCredentials: true,

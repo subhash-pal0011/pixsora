@@ -42,7 +42,7 @@ export function ReelsUplod() {
                      formData.append("media", data.media[0]); 
                      formData.append("caption", data.caption);
 
-                     const res = await axios.post("/api/reelsCreate",formData,{ withCredentials: true });
+                     const res = await axios.post("https://pixsora-backend-85ol.onrender.com/api/reelsCreate",formData,{ withCredentials: true });
 
                      if (res.data.success) {
                             toast.success(res.data.message || "Reels Uploaded!");

@@ -10,7 +10,7 @@ const useCurrentUser = () => {
        useEffect(() => {
               const fetchUser = async () => {
                      try {
-                            const res = await axios.get("/api/me", {
+                            const res = await axios.get("https://pixsora-backend-85ol.onrender.com/api/me", {
                                    withCredentials: true
                             });
 

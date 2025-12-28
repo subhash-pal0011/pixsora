@@ -32,7 +32,7 @@ const Notification = () => {
        useEffect(() => {
               const getAllNotification = async () => {
                      try {
-                            const res = await axios.get("/api/getAllNotification", {
+                            const res = await axios.get("https://pixsora-backend-85ol.onrender.com/api/getAllNotification", {
                                    withCredentials: true,
                             });
 
@@ -40,7 +40,7 @@ const Notification = () => {
                                    setNotifications(res.data.data);
                             }
 
-                            await axios.put("/api/markAllReadNotification", {}, { withCredentials: true });
+                            await axios.put("https://pixsora-backend-85ol.onrender.com/api/markAllReadNotification", {}, { withCredentials: true });
 
                             // 🔥 ISSE REDUX COUNT = 0, REDUX KE UNDER HI NA COUNT KO STORE KRA RHE HII TO USE 0 BANA DIYA.
                             dispatch(setNotification(0))

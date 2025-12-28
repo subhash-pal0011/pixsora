@@ -8,7 +8,6 @@ import { MdOutlineDoNotDisturbAlt } from "react-icons/md";
 import { useUser } from '@/CONTEXT_API/User';
 import { ClipLoader } from "react-spinners";
 
-
 // ye dono data rkhne ke liye.
 import { useDispatch } from "react-redux";  //user set krne ke liye useDispatch  hook use krenge.
 import { setUsers } from '@/REDUX/UserSlice';
@@ -31,7 +30,7 @@ const Verification = () => {
 
   const onSubmit = async (data) => {
     try {
-      const res = await axios.post("/api/verificationEmail",
+      const res = await axios.post("https://pixsora-backend-85ol.onrender.com/api/verificationEmail",
         { email: user.email, otp: data.otp },
         { withCredentials: true }
       )
