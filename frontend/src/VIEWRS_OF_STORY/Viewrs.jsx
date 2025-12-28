@@ -17,26 +17,45 @@ export function Viewrs({ storyId }) {
        const [viewrs, setViewrs] = useState([]);
        const { userData } = useSelector((state) => state.user);
 
+       // useEffect(() => {
+       //        if (!storyId) return;
+
+       //        const fetchViewrs = async () => {
+       //               try {
+       //                      const res = await axios.get(`https://pixsora-backend-85ol.onrender.com/api/story/viewers/${storyId}`, {
+       //                             withCredentials: true,
+       //                      });
+
+       //                      if (res.data.success) {
+       //                             setViewrs(res.data.data)
+       //                      }
+       //               } catch (error) {
+       //                      console.log("fetch viewers error:", error);
+       //               }
+       //        };
+
+       //        fetchViewrs();
+       // }, [storyId, userData._id]);
+
        useEffect(() => {
-              if (!storyId) return;
+              if (!storyId || !userData?._id) return;
 
               const fetchViewrs = async () => {
                      try {
-                            const res = await axios.get(`https://pixsora-backend-85ol.onrender.com/api/story/viewers/${storyId}`, {
-                                   withCredentials: true,
-                            });
+                            const res = await api.get(`/api/story/viewers/${storyId}`);
 
                             if (res.data.success) {
-                                   setViewrs(res.data.data)
+                                   setViewrs(res.data.data);
                             }
                      } catch (error) {
-                            console.log("fetch viewers error:", error);
+                            console.log("fetch viewers error:", error.response?.status);
                      }
               };
 
               fetchViewrs();
-       }, [storyId, userData._id]);
+       }, [storyId, userData?._id]);
 
+       
        return (
               <Dialog>
                      <DialogTrigger asChild>
