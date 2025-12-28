@@ -17,7 +17,7 @@ Backend: https://pixsora-backend-85ol.onrender.com
 - User authentication with JWT & Cookies  
 - Email verification using OTP  
 - Forgot password (OTP based)  
-- Create, like, comment posts  
+- Create, like, comment & save posts  
 - Image & video upload  
 - Reels support  
 - Stories with 24-hour expiry  
