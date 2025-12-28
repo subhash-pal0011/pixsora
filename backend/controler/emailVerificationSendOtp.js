@@ -49,8 +49,8 @@ export const emailVerificationSendOtp = async (req, res) => {
 
               res.cookie("token", token, {
                      httpOnly: true,
-                     secure: false,        // localhost ke liye false
-                     sameSite: "lax",      // ya strict/localhost ke liye safe
+                     secure: true,        // localhost ke liye false
+                     sameSite: "none",      // ya strict/localhost ke liye safe
                      maxAge: 7 * 24 * 60 * 60 * 1000
               });
 
