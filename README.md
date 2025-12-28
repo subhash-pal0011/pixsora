@@ -1,4 +1,4 @@
-# 📸 Pixora – Instagram Clone (MERN Stack)
+# 📸 Pixora (MERN Stack)
 
 Pixora is a full-stack social media application inspired by Instagram.  
 It supports reels, stories, posts, real-time chat, notifications, and secure authentication.
