@@ -96,6 +96,7 @@ app.use("/api/getAllStory", getAllStoryRouter)
 app.use("/api/deleteStory", deleteStoryRouter)
 app.use("/api/follow", followUnfollowRouter)
 app.use("/api/getUserStory", getUserStoryRouter)
+
 app.use("/api/story/viewers", viewrsOfStoryRouter)
 
 app.use("/api/search", searchRouter)
